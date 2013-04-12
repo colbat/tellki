@@ -6,7 +6,8 @@
 
 jQuery(function($){
 
-	var iosocket = io.connect("http://127.0.0.1:1337");
+	// Server config
+	var iosocket = io.connect("http://tellki.aws.af.cm");
 
 	$('#sign-in').on('submit', function(event) {
 		event.preventDefault();
@@ -17,15 +18,16 @@ jQuery(function($){
 		});
 	});
 
+	window.onbeforeunload = function() {
+  		iosocket.emit('clientDisco');
+  		return null;
+	};
+
 	$('#message-to-send').keypress(function(e) {
 		if(e.which === 13) {
 			iosocket.emit('sendMessage', $('#message-to-send').val());
 			$('#message-to-send').val('');
 		}
-	});
-
-	$('#sign-out').on('submit', function(event) {
-		alert('toto');
 	});
 
 	iosocket.on("userSignedIn", function(username, channel) {
