@@ -56,7 +56,7 @@ io.sockets.on('connection', function(client) {
   /**
   * Client disco
   */
-  client.on('clientDisco', function() {
+  client.on('disconnect', function() {
     io.sockets.in(client.channel).emit('clientDisco', client.username);
     client.leave(client.channel);
     updateConnectedUsers(client.channel);
