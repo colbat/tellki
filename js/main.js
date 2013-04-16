@@ -7,7 +7,7 @@
 jQuery(function($){
 
 	// Server config
-	var iosocket = io.connect("http://tellki.aws.af.cm");
+	var iosocket = io.connect("http://tellki.aws.af.cm", {'sync disconnect on unload': true});
 
 	$('#sign-in').on('submit', function(event) {
 		event.preventDefault();
@@ -17,11 +17,6 @@ jQuery(function($){
 			channelName: $('#channel').val()
 		});
 	});
-
-	window.onbeforeunload = function() {
-  		iosocket.emit('clientDisco');
-  		return null;
-	};
 
 	$('#message-to-send').keypress(function(e) {
 		if(e.which === 13) {
