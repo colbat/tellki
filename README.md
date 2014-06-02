@@ -7,8 +7,8 @@ It focuses on simplicity. Any user can join any channel without the need to have
 Channels
 --------
 
-You can tallk with people who are in the same channel as you.
-When you are asked to sign-in on the home page, you must choose a channel to join in.
+You can tallk with people who are in the same channel as yours.
+When you are asked to sign-in on the home page, you got to choose a channel to join in.
 * If the channel already exists, you will join it.
 * If the channel doesn't exist yet, it will be created.
 
