@@ -63,9 +63,11 @@ body {
 
 #chat-messages {
 	height: 500px;
-	overflow: scroll;
 }
 
+#chat-messages-list {
+	overflow: scroll;
+}
 
 
 /* ==========================================================================

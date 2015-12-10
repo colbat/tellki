@@ -4,7 +4,7 @@
    Tellki server side code
    ========================================================================== */
 
-var port = (process.env.VCAP_APP_PORT || 3000);
+var port = (process.env.PORT || 3000);
 var http = require('http').createServer();
 http.listen(port);
 console.log('Server running on ' + port);
@@ -12,9 +12,6 @@ console.log('Server running on ' + port);
 /* ######## */
 
 var io = require('socket.io').listen(http);
-
-// If WebSockets are not supported by the server
-io.set('transports', ['xhr-polling']);
 
 var utils = require('./utils');
 var channelsFilePath = './channels.json';

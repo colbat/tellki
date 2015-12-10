@@ -7,7 +7,7 @@
 jQuery(function($){
 
 	// Server config
-	var iosocket = io.connect("http://tellki.aws.af.cm", {'sync disconnect on unload': true});
+	var iosocket = io.connect("http://tellki.herokuapp.com", {'sync disconnect on unload': true});
 
 	$('#sign-in').on('submit', function(event) {
 		event.preventDefault();
